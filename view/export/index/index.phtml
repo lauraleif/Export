@@ -1,0 +1,13 @@
+<?php
+$form->prepare();
+$escapeHtml = $this->plugin('escapeHtml');
+$this->headLink()->appendStylesheet($this->assetUrl('css/exportc.css', 'Export'));
+?>
+
+<?php echo $this->pageTitle($this->translate('Export Settings'), 1, $this->translate('Export')); ?>
+<?php echo $this->form()->openTag($form); ?>
+<fieldset id='page-actions'>
+    <button type="submit"><?php echo $this->translate('Download'); ?></button>
+</fieldset>
+<?php echo $this->formCollection($form, false); ?>
+<?php echo $this->form()->closeTag($form); ?>

@@ -1,0 +1,52 @@
+<?php
+
+header('Content-Type: text/csv');
+header('Content-Disposition: attachment; filename="omeka_export.csv"');
+
+$output = fopen('php://output', 'w');
+
+$resultCount = sizeOf($collection);
+if ($resultCount > 0){
+	$collectionHeaders = array_keys($collection[0]);
+	$header = array_merge($collectionHeaders, $properties);
+	fputcsv($output, $header);
+	foreach ($collection as $item){
+		if(is_array($item)){
+			$outputItem = array();
+			foreach($header as $column){
+				if( array_key_exists($column, $item)) {
+					$row = $item[$column];
+					if (is_array($row)){
+						if ( array_key_exists('o:id', $row)) {
+							array_push($outputItem, $row['o:id']);
+						} elseif (array_key_exists('@value', $row)){
+							array_push($outputItem, $row['@value']);
+						} else {//Row has multiple values
+							$multiRow = "";
+							foreach ($row as $single){
+								if ( array_key_exists('o:id', $single)) {
+									$multiRow = ";" . $single['o:id'] ;
+								} elseif (array_key_exists('@value', $single)){
+									$multiRow = ";" .$single['@value'] ;
+								}
+							}
+							$multiRow = substr($multiRow, 1);
+							array_push($outputItem, $multiRow);
+						}
+					} else {
+						array_push($outputItem, $row);
+					}
+				} else {
+					array_push($outputItem, "");
+				}
+			}
+			unset($item['media:full']);
+			array_push($outputItem, json_encode($item));
+			fputcsv($output, $outputItem);
+		}
+	}
+} else {
+	echo "No results. Please check that your collection has items and you have permissions for the items.";
+}
+
+?>

@@ -1,0 +1,31 @@
+tr.active {
+    background-color: rgba(0,0,0, .08);
+}
+
+ul.options {
+    padding: unset;
+    width: 100%;
+    margin: 0;
+}
+
+ul.options li {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+#select-item-set {
+    height: 100px;
+}
+
+input.value-language[type="text"] {
+    display: block;
+    margin: 3px;
+}
+
+.selector li.selected {
+    background-color: #0000000a;
+}
+
