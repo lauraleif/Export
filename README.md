@@ -5,6 +5,8 @@ Export is a module for Omeka S which exports item sets into CSV files. Each row 
 
 Export CSV files include item metadata and a link to associated media. 
 
+This module has not been tested with very large item sets. Consider breaking very large item sets in to smaller item sets for exporting.
+
 
 Installation
 ------------
