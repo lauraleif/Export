@@ -70,7 +70,7 @@ class IndexController extends AbstractActionController
         if ($request->isPost()) {
             $out = $_REQUEST["add_to_item_set"];
         } else {
-            $out = "Connetion error or no search results";
+            $out = "Connection error or no search results";
         }
         $field = 'item_set_id';
         $items = $this->getData($out, 'item_set_id', 'items');
