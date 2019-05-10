@@ -25,9 +25,9 @@ if ($resultCount > 0){
 							$multiRow = "";
 							foreach ($row as $single){
 								if ( array_key_exists('o:id', $single)) {
-									$multiRow = ";" . $single['o:id'] ;
+									$multiRow = $multiRow . ";" . $single['o:id'] ;
 								} elseif (array_key_exists('@value', $single)){
-									$multiRow = ";" .$single['@value'] ;
+									$multiRow = $multiRow . ";" .$single['@value'] ;
 								}
 							}
 							$multiRow = substr($multiRow, 1);
