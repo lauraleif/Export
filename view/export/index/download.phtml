@@ -28,6 +28,8 @@ if ($resultCount > 0){
 									$multiRow = $multiRow . ";" . $single['o:id'] ;
 								} elseif (array_key_exists('@value', $single)){
 									$multiRow = $multiRow . ";" .$single['@value'] ;
+								} elseif (array_key_exists('@id', $single)){
+									$multiRow = $multiRow . ";" .$single['@id'] ;
 								}
 							}
 							$multiRow = substr($multiRow, 1);
