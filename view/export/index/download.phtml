@@ -24,13 +24,17 @@ if ($resultCount > 0){
 						} else {//Row has multiple values
 							$multiRow = "";
 							foreach ($row as $single){
-								if ( array_key_exists('o:id', $single)) {
-									$multiRow = $multiRow . ";" . $single['o:id'] ;
-								} elseif (array_key_exists('@value', $single)){
-									$multiRow = $multiRow . ";" .$single['@value'] ;
-								} elseif (array_key_exists('@id', $single)){
-									$multiRow = $multiRow . ";" .$single['@id'] ;
-								}
+								if(is_array($single)){
+									if ( array_key_exists('o:id', $single)) {
+										$multiRow = $multiRow . ";" . $single['o:id'] ;
+									} elseif (array_key_exists('@value', $single)){
+										$multiRow = $multiRow . ";" .$single['@value'] ;
+									} elseif (array_key_exists('@id', $single)){
+										$multiRow = $multiRow . ";" .$single['@id'] ;
+									}
+								} else {
+									$multiRow = $multiRow . ";" .$single ;
+								}								
 							}
 							$multiRow = substr($multiRow, 1);
 							array_push($outputItem, $multiRow);
