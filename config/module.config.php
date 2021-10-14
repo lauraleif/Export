@@ -83,4 +83,9 @@ return [
             ],
         ],
     ],
+    'view_helpers' => [
+        'factories' => [
+            'exportButton' => Service\ViewHelper\ExportButtonFactory::class,
+        ],
+    ],
 ];

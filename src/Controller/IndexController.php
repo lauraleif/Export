@@ -67,13 +67,9 @@ class IndexController extends AbstractActionController
     {
         $view = new ViewModel;
         $request = $this->getRequest();
-        if ($request->isPost()) {
-            $out = $_REQUEST["add_to_item_set"];
-        } else {
-            $out = "Connection error or no search results";
-        }
-        $field = 'item_set_id';
-        $items = $this->getData($out, 'item_set_id', 'items');
+        $query = $request->getQuery()->toArray();
+        $items = $this->api->search('items', $query)->getContent();
+        $items = $this->formatData($items);
         $itemMedia = [];
         foreach ($items as $item) {
             if (array_key_exists('o:media', $item) && !empty($item['o:media'])) {
