@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Abel Boilevin, 2025
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-25 14:13+0100\n"
+"PO-Revision-Date: 2025-11-05 12:38+0000\n"
+"Last-Translator: Abel Boilevin, 2025\n"
+"Language-Team: French (https://app.transifex.com/biblibre-/teams/298658/"
+"fr/)\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
+
+#: view/export/admin/detail.phtml:22
+msgid "Job details"
+msgstr "Détails de la tâche"
+
+#: view/export/admin/index/export-item-set.phtml:7
+msgid "Export items from an item set"
+msgstr "Exporter les contenus d'une collection"
+
+#: view/export/admin/index/export-item-set.phtml:11
+msgid "Start export"
+msgstr "Lancer l'export"
+
+#: view/export/admin/list/list.phtml:4
+msgid "Exports"
+msgstr "Liste des exports"
+
+#: view/export/admin/list/list.phtml:7
+#, fuzzy
+msgid "No exports saved yet"
+msgstr "Pas encore d'exports"
+
+#: view/export/admin/list/list.phtml:20
+msgid "Job"
+msgstr "Tâche"
+
+#: view/export/admin/list/list.phtml:21
+msgid "Actions"
+msgstr "Actions"
+
+#: src/Exporter.php:295
+#, php-format
+msgid "Accessed on: %s"
+msgstr "Accédé le: %s"
+
+#: src/Controller/Admin/IndexController.php:39
+#, php-format
+msgid "Export started in %sjob %s%s"
+msgstr "Export démarré dans le %sjob%s %s"
+
+#: src/Controller/Admin/IndexController.php:121
+msgid "Export started in %s job %s%s"
+msgstr "Export démarré dans le %sjob%s %s"
+
+#: src/Form/ExportItemSetForm.php:26
+msgid "Select item set to export"
+msgstr "Sélectionner une collection à exporter"
+
+#: src/Form/ExportItemSetForm.php:40 src/Form/ExportButtonForm.php:35
+msgid "Select format to export"
+msgstr "Sélectionner le format d'export"
+
+#: src/Form/ExportButtonForm.php:44
+msgid ""
+"Check the resources you want to export. If none are selected, an export job "
+"will be performed to export all resources."
+msgstr ""
+"Cocher les ressources à exporter. Si aucune n'est cochée, un export en tâche "
+"de fond se lancera pour exporter toutes les ressources du résulat."
+
+#: src/Form/SiteSettingsFieldset.php:25
+msgid "Public export button placement"
+msgstr "Placement du bouton d'export côté site"
+
+#: src/Form/SiteSettingsFieldset.php:28
+msgid "Before the resource"
+msgstr "Avant la ressource"
+
+#: src/Form/SiteSettingsFieldset.php:29
+msgid "After the resource"
+msgstr "Après la ressource"
+
+#: src/Form/SiteSettingsFieldset.php:53
+msgid "Export formats enabled for this site"
+msgstr "Formats d'export activés pour ce site"
+
+#: config/module.config.php:120
+msgid "Download"
+msgstr "Téléchargement"
+
+#: config/module.config.php:133
+msgid "Export List"
+msgstr "Liste des exports"
+
+#: Module.php:35 Module.php:71
+msgid "The directory \"{path}\" is not writeable."
+msgstr "Il n'est pas permis d'écrire dans le dossier \"{path}\" ."
+
+#: Module.php:43 Module.php:81
+msgid "The directory \"{path}\" is not writeable: {error}."
+msgstr "Il n'est pas permis d'écrire dans le dossier \"{path}\" ."
+
+#~ msgid "Previous exports from jobs"
+#~ msgstr "Exports passés lancés en tâche de fond"
+
+#~ msgid "Start download"
+#~ msgstr "Télécharger"
+
+#~ msgid "Export Settings"
+#~ msgstr "Paramètres de l'export"

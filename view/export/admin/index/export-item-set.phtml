@@ -1,0 +1,17 @@
+<?php
+$form->prepare();
+$escapeHtml = $this->plugin('escapeHtml');
+$this->headLink()->appendStylesheet($this->assetUrl('css/export.css', 'Export'));
+?>
+
+<?php echo $this->pageTitle($this->translate('Export items from an item set'), 1, $this->translate('Export')); ?>
+<?php echo $this->form()->openTag($form); ?>
+<?php $this->trigger('view.index.form.before'); ?>
+<div id='page-actions'>
+    <button><?php echo $this->translate('Start export'); ?></button>
+</div>
+<?php echo $this->formCollection($form, false); ?>
+<?php $this->trigger('view.index.form.after'); ?>
+
+<?php echo $this->form()->closeTag($form); ?>
+<?php $this->trigger('view.index.after'); ?>

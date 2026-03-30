@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-25 14:13+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: view/export/admin/detail.phtml:22
+msgid "Job details"
+msgstr ""
+
+#: view/export/admin/index/export-item-set.phtml:7
+msgid "Export items from an item set"
+msgstr ""
+
+#: view/export/admin/index/export-item-set.phtml:11
+msgid "Start export"
+msgstr ""
+
+#: view/export/admin/list/list.phtml:4
+msgid "Exports"
+msgstr ""
+
+#: view/export/admin/list/list.phtml:7
+msgid "No exports saved yet"
+msgstr ""
+
+#: view/export/admin/list/list.phtml:20
+msgid "Job"
+msgstr ""
+
+#: view/export/admin/list/list.phtml:21
+msgid "Actions"
+msgstr ""
+
+#: src/Exporter.php:295
+#, php-format
+msgid "Accessed on: %s"
+msgstr ""
+
+#: src/Controller/Admin/IndexController.php:39
+#, php-format
+msgid "Export started in %sjob %s%s"
+msgstr ""
+
+#: src/Controller/Admin/IndexController.php:121
+#, php-format
+msgid "Export started in %s job %s%s"
+msgstr ""
+
+#: src/Form/ExportItemSetForm.php:26
+msgid "Select item set to export"
+msgstr ""
+
+#: src/Form/ExportItemSetForm.php:40 src/Form/ExportButtonForm.php:35
+msgid "Select format to export"
+msgstr ""
+
+#: src/Form/ExportButtonForm.php:44
+msgid ""
+"Check the resources you want to export. If none are selected, an export job "
+"will be performed to export all resources."
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:25
+msgid "Public export button placement"
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:28
+msgid "Before the resource"
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:29
+msgid "After the resource"
+msgstr ""
+
+#: src/Form/SiteSettingsFieldset.php:53
+msgid "Export formats enabled for this site"
+msgstr ""
+
+#: config/module.config.php:120
+msgid "Download"
+msgstr ""
+
+#: config/module.config.php:133
+msgid "Export List"
+msgstr ""
+
+#: Module.php:35 Module.php:71
+msgid "The directory \"{path}\" is not writeable."
+msgstr ""
+
+#: Module.php:43 Module.php:81
+msgid "The directory \"{path}\" is not writeable: {error}."
+msgstr ""

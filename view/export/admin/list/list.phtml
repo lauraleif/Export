@@ -1,0 +1,30 @@
+<?php
+$escape = $this->plugin('escapeHtml'); ?>
+
+<?php echo $this->pageTitle($this->translate('Exports'), 1, $this->translate('Export')); ?>
+
+<?php if (empty($exports)): ?>
+    <div><?php echo $this->translate('No exports saved yet'); ?></div>
+<?php else: ?>
+    <?php echo $this->pagination(); ?>
+
+    <table class="tablesaw" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th>
+                    <?php echo $this->sortLink($escape($this->translate('Date')), 'id'); ?>
+                </th>
+                <th><?php echo $escape($this->translate('File')); ?></th>
+                <th><?php echo $escape($this->translate('Resource type')); ?></th>
+                <th><?php echo $escape($this->translate('Resources')); ?></th>
+                <th><?php echo $escape($this->translate('Job')); ?></th>
+                <th><?php echo $escape($this->translate('Actions')); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($exports as $export): ?>
+                <?php echo $this->exportDetail($export); ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

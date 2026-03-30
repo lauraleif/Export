@@ -2,16 +2,19 @@
 namespace Export\Form;
 
 use Omeka\Form\Element\ItemSetSelect;
-use Zend\Form\Form;
+use Laminas\Form\Form;
 
-class ImportForm extends Form
+class ExportItemSetForm extends Form
 {
+    /**
+     * @var array[string]
+     */
+    public $availableFormats = [];
+
     public function init()
     {
-        $this->setAttribute('action', 'export/download');
-        $this->setAttribute('method', 'post');
         $this->add([
-                    'name' => 'add_to_item_set',
+                    'name' => 'item_set',
                     'type' => ItemSetSelect::class,
                     'attributes' => [
                         'id' => 'select-item-set',
@@ -25,6 +28,20 @@ class ImportForm extends Form
                             'resource' => 'item_sets',
                             'query' => [],
                         ],
+                    ],
+        ]);
+
+        $this->availableFormats = array_combine($this->availableFormats, $this->availableFormats);
+
+        $this->add([
+                    'name' => 'format_name',
+                    'type' => 'Select',
+                    'options' => [
+                        'label' => 'Select format to export', // @translate
+                        'value_options' => $this->availableFormats,
+                    ],
+                    'attributes' => [
+                        'required' => true,
                     ],
         ]);
     }
