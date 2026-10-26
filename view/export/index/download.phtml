@@ -8,8 +8,12 @@ $output = fopen('php://output', 'w');
 $resultCount = sizeOf($collection);
 if ($resultCount > 0){
 	$collectionHeaders = array_keys($collection[0]);
-	$header = array_merge($collectionHeaders, $properties);
-	fputcsv($output, $header);
+	$header = array_values(array_unique(array_merge($collectionHeaders, $properties)));
+	$jsonHeader = 'item:full';
+	while (in_array($jsonHeader, $header, true)) {
+		$jsonHeader .= ':json';
+	}
+	fputcsv($output, array_merge($header, [$jsonHeader]), ',', '"', '');
 	foreach ($collection as $item){
 		if(is_array($item)){
 			$outputItem = array();
@@ -48,7 +52,7 @@ if ($resultCount > 0){
 			}
 			unset($item['media:full']);
 			array_push($outputItem, json_encode($item));
-			fputcsv($output, $outputItem);
+			fputcsv($output, $outputItem, ',', '"', '');
 		}
 	}
 } else {

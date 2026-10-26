@@ -65,15 +65,23 @@ class IndexController extends AbstractActionController
     }
     public function downloadAction()
     {
-        $view = new ViewModel;
         $request = $this->getRequest();
-        if ($request->isPost()) {
-            $out = $_REQUEST["add_to_item_set"];
-        } else {
-            $out = "Connection error or no search results";
+        if (!$request->isPost()) {
+            $response = $this->getResponse();
+            $response->getHeaders()->addHeaderLine('Allow', 'POST');
+            return $response->setStatusCode(405)->setContent('Export requires a POST request.');
         }
-        $field = 'item_set_id';
-        $items = $this->getData($out, 'item_set_id', 'items');
+
+        $selection = $request->getPost('add_to_item_set');
+        $itemSetId = (is_string($selection) || is_int($selection))
+            ? filter_var($selection, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]])
+            : false;
+        if ($itemSetId === false) {
+            return $this->getResponse()->setStatusCode(400)->setContent('Select a valid item set to export.');
+        }
+
+        $view = new ViewModel;
+        $items = $this->getData($itemSetId, 'item_set_id', 'items');
         $itemMedia = [];
         foreach ($items as $item) {
             if (array_key_exists('o:media', $item) && !empty($item['o:media'])) {

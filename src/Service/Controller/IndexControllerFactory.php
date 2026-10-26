@@ -7,7 +7,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {
-    public function __invoke(ContainerInterface $serviceLocator, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $serviceLocator, $requestedName, ?array $options = null)
     {
         $api = $serviceLocator->get('Omeka\ApiManager');
         $config = $serviceLocator->get('Config');
